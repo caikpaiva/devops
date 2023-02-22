@@ -1,0 +1,11 @@
+
+Vagrant.configure("2") do |config|
+  config.vm.box = "generic/ubuntu2004"
+  
+  config.vm.define "ubuntu" do |ubu|
+	#ubu.vm.hostname = "Caik" 
+	ubu.vm.network "public_network"
+ 	ubu.vm.provision "shell", path: "script.sh"
+  end
+
+end
